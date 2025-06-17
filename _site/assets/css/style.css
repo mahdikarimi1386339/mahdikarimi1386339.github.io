@@ -57,7 +57,7 @@ nav a:hover {
     padding: 15px; /* Reduced padding for mobile */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     margin-right: 0; /* Remove fixed margin for responsive layout */
-    order: 2; /* Ensure container comes second in flex */
+    order: 1; /* Ensure container comes second in flex */
 }
 
 /* Sidebar with bio */
@@ -67,7 +67,7 @@ nav a:hover {
     text-align: left;
     position: sticky;
     top: 20px; /* Adjusted for smaller screens */
-    order: 1; /* Ensure sidebar comes first in flex */
+    order: 2; /* Ensure sidebar comes first in flex */
 }
 
 .container:only-child {
@@ -88,7 +88,7 @@ nav a:hover {
 }
 
 /* Media query for mobile and smaller screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
     .page-wrapper {
         flex-direction: column; /* Stack container and sidebar vertically */
         gap: 15px; /* Smaller gap for mobile */
