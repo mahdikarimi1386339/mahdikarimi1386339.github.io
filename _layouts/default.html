@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <header>
+    <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
+    <hr>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <hr>
+    <p>© {{ site.title }}</p>
+  </footer>
+</body>
+</html>
+
