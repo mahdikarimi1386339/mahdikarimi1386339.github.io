@@ -37,6 +37,7 @@ nav a:hover {
     text-decoration: underline;
 }
 /* end of shits */
+
 /* Parent wrapper that centers both sidebar and container together */
 .page-wrapper {
     display: flex;

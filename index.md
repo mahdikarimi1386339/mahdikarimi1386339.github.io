@@ -3,6 +3,7 @@ layout: default
 title: TheCoolWriter
 ---
 
+
 <h2>latest posts</h2>
 
 <ul>

@@ -13,8 +13,9 @@
             {% if page.url == "/" %} {% include sidebar.html %} {% endif %}
 
             <div class="container">
-                {% include header.html %} {{ content }} {% include footer.html
-                %}
+                {% include header.html %}
+                <div style="padding: 0 20px 0 20px">{{ content }}</div>
+                {% include footer.html %}
             </div>
         </div>
     </body>
