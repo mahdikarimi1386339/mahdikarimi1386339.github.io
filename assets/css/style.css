@@ -82,3 +82,21 @@ nav a:hover {
     font-size: 18px;
     color: #444;
 }
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column;
+        align-items: center; /* وسط‌چین در حالت عمودی */
+        gap: 20px;
+    }
+
+    .sidebar {
+        position: static; /* دیگه sticky لازم نیست توی موبایل */
+        width: 100%;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
