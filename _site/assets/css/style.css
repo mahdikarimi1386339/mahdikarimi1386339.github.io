@@ -4,9 +4,10 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     font-family: "Times New Roman", Times, serif;
+    font-size: 16px; /* Base font size for scalability */
 }
 
-/* shits */
+/* Header and footer links */
 header a:link,
 header a:visited {
     text-decoration: none;
@@ -15,7 +16,7 @@ header a:visited {
 
 header,
 footer {
-    padding: 20px;
+    padding: 15px; /* Reduced padding for smaller screens */
     color: #555;
 }
 
@@ -28,7 +29,7 @@ footer {
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 0 8px; /* Slightly smaller margin for mobile */
     text-decoration: none;
     color: #007acc;
 }
@@ -36,15 +37,15 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
-/* end of shits */
 
-/* Parent wrapper that centers both sidebar and container together */
+/* Parent wrapper that centers both container and sidebar */
 .page-wrapper {
     display: flex;
-    gap: 40px; /* spacing between sidebar and content */
+    flex-direction: row; /* Default row layout for larger screens */
+    gap: 20px; /* Reduced gap for better mobile fit */
     max-width: 1300px;
-    margin: 0 auto; /* centers the whole wrapper */
-    padding: 40px 20px;
+    margin: 0 auto; /* Centers the wrapper */
+    padding: 20px 10px; /* Reduced padding for mobile */
     align-items: flex-start;
 }
 
@@ -53,14 +54,10 @@ nav a:hover {
     max-width: 1100px;
     width: 100%;
     background-color: white;
-    padding: 20px;
+    padding: 15px; /* Reduced padding for mobile */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-right: 220px;
-}
-
-.container:only-child {
-    margin-left: auto;
-    margin-right: auto;
+    margin-right: 0; /* Remove fixed margin for responsive layout */
+    order: 2; /* Ensure container comes second in flex */
 }
 
 /* Sidebar with bio */
@@ -69,34 +66,85 @@ nav a:hover {
     flex-shrink: 0;
     text-align: left;
     position: sticky;
-    top: 40px;
+    top: 20px; /* Adjusted for smaller screens */
+    order: 1; /* Ensure sidebar comes first in flex */
+}
+
+.container:only-child {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bio-pic {
-    width: 200px;
+    width: 100%; /* Responsive image width */
+    max-width: 200px; /* Maintain max size */
     border-radius: 5%;
     margin-bottom: 10px;
 }
 
 .bio-text {
-    font-size: 18px;
+    font-size: 1rem; /* Relative unit for better scaling */
     color: #444;
 }
 
-@media (max-width: 768px) {
+/* Media query for mobile and smaller screens */
+@media screen and (max-width: 768px) {
     .page-wrapper {
-        flex-direction: column;
-        align-items: center; /* وسط‌چین در حالت عمودی */
-        gap: 20px;
-    }
-
-    .sidebar {
-        position: static; /* دیگه sticky لازم نیست توی موبایل */
-        width: 100%;
-        text-align: center;
+        flex-direction: column; /* Stack container and sidebar vertically */
+        gap: 15px; /* Smaller gap for mobile */
+        padding: 10px; /* Further reduced padding */
     }
 
     .container {
-        width: 100%;
+        max-width: 100%; /* Full width on mobile */
+        padding: 10px; /* Smaller padding */
+        margin-right: 0; /* Remove margin for mobile */
+        order: 1; /* Container stays first */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width for sidebar on mobile */
+        position: static; /* Disable sticky positioning on mobile */
+        text-align: center; /* Center-align for better mobile appearance */
+        order: 2; /* Sidebar comes after container */
+    }
+
+    .bio-pic {
+        max-width: 150px; /* Smaller image for mobile */
+        margin: 0 auto 10px; /* Center image */
+    }
+
+    .bio-text {
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
+    }
+
+    header,
+    footer {
+        padding: 10px; /* Even smaller padding for mobile */
+    }
+
+    nav a {
+        margin: 0 5px; /* Tighter margins for mobile */
+        font-size: 0.9rem; /* Smaller nav links */
+    }
+}
+
+/* Media query for very small screens (e.g., phones below 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px; /* Smaller base font size */
+    }
+
+    .bio-text {
+        font-size: 0.9rem; /* Further reduced font size */
+    }
+
+    .bio-pic {
+        max-width: 120px; /* Even smaller image for very small screens */
+    }
+
+    nav a {
+        font-size: 0.85rem; /* Smaller nav links */
+        margin: 0 3px; /* Tighter margins */
     }
 }
