@@ -42,7 +42,7 @@ nav a:hover {
 .page-wrapper {
     display: flex;
     gap: 40px; /* spacing between sidebar and content */
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto; /* centers the whole wrapper */
     padding: 40px 20px;
     align-items: flex-start;
@@ -55,6 +55,7 @@ nav a:hover {
     background-color: white;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    margin-right: 220px;
 }
 
 .container:only-child {
@@ -64,7 +65,7 @@ nav a:hover {
 
 /* Sidebar with bio */
 .sidebar {
-    width: 300px;
+    width: 200px;
     flex-shrink: 0;
     text-align: left;
     position: sticky;
