@@ -1,25 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1><a href="{{ "/" | relative_url }}" style="">{{ site.title }}</a></h1>
-            <hr>
-        </header>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ page.title }}</title>
+        <link
+            rel="stylesheet"
+            href="{{ '/assets/css/style.css' | relative_url }}"
+        />
+    </head>
+    <body>
+        <div class="page-wrapper">
+            {% if page.url == "/" %} {% include sidebar.html %} {% endif %}
 
-        <main>
-                {{ content }}
-        </main>
-
-        <footer>
-            <hr>
-            <p>© {{ site.title }}</p>
-        </footer>
-    </div>
-</body>
+            <div class="container">
+                {% include header.html %} {{ content }} {% include footer.html
+                %}
+            </div>
+        </div>
+    </body>
 </html>

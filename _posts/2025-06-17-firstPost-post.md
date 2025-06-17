@@ -1,8 +1,7 @@
 ---
 layout: default
-title: اولین پست من
+title: My First Post
 ---
 
-سلام!  
-این اولین پست من در وبلاگ شخصی‌مه.
-
+Hello World,
+it is june!
