@@ -30,4 +30,4 @@ Peterson’s debate tactics aren’t just a personal quirk—they reflect a broa
 If you’re tired of debates that prioritize drama over substance, it’s time to look beyond Peterson’s rhetoric. True discourse requires listening, engaging, and occasionally admitting when you’re wrong—qualities that are often absent in his high-profile clashes.
 What do you think? Have you noticed these patterns in Peterson’s debates? Let’s keep the conversation going.
 
-Thanks for reading! ❤️
+Thanks for reading!
