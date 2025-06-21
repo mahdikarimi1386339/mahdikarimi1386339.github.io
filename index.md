@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TheCoolWriter
+title: The Cool Writer
 ---
 
 

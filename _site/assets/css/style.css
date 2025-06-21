@@ -3,13 +3,20 @@
 body {
     background-color: #f9f9f9;
     margin: 0;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "IBM Plex Serif", serif;
+    /* font-family: "Times New Roman", Times, serif; */
     font-size: 16px; /* Base font size for scalability */
 }
 
 /* Header and footer links */
 header a:link,
 header a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.post h1 a:link,
+.post h1 a:visited {
     text-decoration: none;
     color: black;
 }
@@ -22,6 +29,10 @@ footer {
 
 header {
     text-align: left;
+}
+
+header h1 {
+    font-size: 25px;
 }
 
 footer {
@@ -79,7 +90,17 @@ nav a:hover {
     width: 100%; /* Responsive image width */
     max-width: 200px; /* Maintain max size */
     border-radius: 5%;
-    margin-bottom: 10px;
+}
+
+.PostImages {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.PostImages img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
 }
 
 .bio-text {
@@ -147,4 +168,7 @@ nav a:hover {
         font-size: 0.85rem; /* Smaller nav links */
         margin: 0 3px; /* Tighter margins */
     }
+}
+.post {
+    font-size: 17px;
 }

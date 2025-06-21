@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mahdikarimi1386339.github.io/sitemap.xml

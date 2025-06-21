@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="fa">
+<html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="UTF-8" />
         <title>{{ page.title }} | {{ site.title }}</title>
         <link
             rel="stylesheet"
@@ -15,11 +14,19 @@
     </head>
     <body>
         <div class="page-wrapper">
-            {% if page.url == "/" %} {% include sidebar.html %} {% endif %}
-
             <div class="container">
                 {% include header.html %}
-                <div style="padding: 0 20px 0 20px">{{ content }}</div>
+                <main class="post">
+                    <h1>
+                        <a href="{{ page.url | relative_url }}">
+                            {{ page.title }}
+                        </a>
+                    </h1>
+
+                    {% if page.date %}
+                    <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+                    {% endif %} {{ content }}
+                </main>
                 {% include footer.html %}
             </div>
         </div>
