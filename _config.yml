@@ -4,5 +4,5 @@ markdown: kramdown
 theme: null
 kramdown:
   input: GFM
-plugins:
-  - jekyll-sitemap
+# plugins:
+#   - jekyll-sitemap

@@ -21,6 +21,11 @@ header a:visited {
     color: black;
 }
 
+.post a:link,
+.post a:visited {
+    color: firebrick;
+}
+
 header,
 footer {
     padding: 15px; /* Reduced padding for smaller screens */

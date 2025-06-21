@@ -1,18 +1,6 @@
 <!doctype html>
 <html lang="fa">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charset="UTF-8" />
-        <title>{{ page.title }} | {{ site.title }}</title>
-        <link
-            rel="stylesheet"
-            href="{{ '/assets/css/style.css' | relative_url }}"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Recursive&display=swap"
-            rel="stylesheet"
-        />
-    </head>
+    {% include head.html %}
     <body>
         <div class="page-wrapper">
             {% if page.url == "/" %} {% include sidebar.html %} {% endif %}
