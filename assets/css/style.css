@@ -16,6 +16,18 @@ header a:visited {
     color: black;
 }
 
+a:link {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: rgb(190, 0, 0);
+}
+
+a:hover {
+    color: rgb(0, 36, 155);
+}
+
 .post h1 a:link,
 .post h1 a:visited {
     text-decoration: none;
