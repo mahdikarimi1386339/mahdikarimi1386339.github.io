@@ -1,7 +1,8 @@
 /* style.css */
 
 body {
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    background-color: #fdf6e3;
     margin: 0;
     font-family: "IBM Plex Serif", serif;
     /* font-family: "Times New Roman", Times, serif; */
@@ -24,6 +25,11 @@ header a:visited {
 .post a:link,
 .post a:visited {
     color: firebrick;
+}
+
+.post a:hover {
+    color: #c00; /* Darker red */
+    text-decoration: underline;
 }
 
 header,
@@ -69,11 +75,12 @@ nav a:hover {
 .container {
     max-width: 1100px;
     width: 100%;
-    background-color: white;
-    padding: 15px; /* Reduced padding for mobile */
+    background-color: #fcffe0;
+    padding: 1.5rem; /* Reduced padding for mobile */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     margin-right: 0; /* Remove fixed margin for responsive layout */
     order: 2; /* Ensure container comes second in flex */
+    border-radius: 20px;
 }
 
 /* Sidebar with bio */
@@ -84,12 +91,13 @@ nav a:hover {
     position: sticky;
     top: 20px; /* Adjusted for smaller screens */
     order: 1; /* Ensure sidebar comes first in flex */
+    z-index: 10;
 }
 
-.container:only-child {
+/* .container:only-child {
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 .bio-pic {
     width: 100%; /* Responsive image width */
@@ -174,6 +182,7 @@ nav a:hover {
         margin: 0 3px; /* Tighter margins */
     }
 }
+
 .post {
     font-size: 17px;
 }
