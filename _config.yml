@@ -1,8 +1,9 @@
 title: The Cool Writer
-url: "https://mahdikarimi1386339.github.io"
 markdown: kramdown
 theme: null
 kramdown:
   input: GFM
-# plugins:
-#   - jekyll-sitemap
+url: "https://mahdikarimi1386339.github.io"
+plugins:
+  - jekyll-sitemap
+baseurl: ""
