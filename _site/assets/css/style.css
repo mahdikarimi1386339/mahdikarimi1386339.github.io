@@ -93,6 +93,8 @@ nav a:hover {
     margin-right: 0; /* Remove fixed margin for responsive layout */
     order: 2; /* Ensure container comes second in flex */
     border-radius: 20px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 /* Sidebar with bio */
@@ -123,7 +125,7 @@ nav a:hover {
 }
 
 .PostImages img {
-    /* width: 100%; */
+    width: 100%;
     max-width: 800px;
     border-radius: 5px;
 }
