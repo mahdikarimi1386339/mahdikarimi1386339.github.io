@@ -1,202 +1,289 @@
-/* style.css */
+/* style.css - Enhanced for Jekyll */
+
+:root {
+  /* Color Palette (Solarized-inspired + refined accents) */
+  --bg-body: #fdf6e3;
+  --bg-container: #fcffe0;
+  --text-primary: #586e75;
+  --text-heading: #1a3b4d;
+  --link-normal: #b58900; /* Gold (Solarized) - warm and elegant */
+  --link-hover: #6c5000;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.2s ease;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-body: #073642;
+    --bg-container: #002b36;
+    --text-primary: #eee8d5;
+    --text-heading: #eee8d5;
+    --link-normal: #b58900;
+    --link-hover: #fcaf3e;
+  }
+}
 
 body {
-    /* background-color: #f9f9f9; */
-    background-color: #fdf6e3;
-    margin: 0;
-    font-family: "IBM Plex Serif", serif;
-    /* font-family: "Times New Roman", Times, serif; */
-    font-size: 16px; /* Base font size for scalability */
+  background-color: var(--bg-body);
+  margin: 0;
+  font-family: "IBM Plex Serif", serif;
+  font-size: clamp(14px, 4vw, 16px); /* Responsive base size */
+  color: var(--text-primary);
+  line-height: 1.6;
 }
 
-/* Header and footer links */
-header a:link,
-header a:visited {
-    text-decoration: none;
-    color: black;
+/* Link Styles */
+a:link,
+a:visited {
+  color: var(--link-normal);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-a:link {
-    text-decoration: none;
+a:hover,
+a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
 
-a:link, a:visited {
-    color: rgb(190, 0, 0);
+/* Focus for accessibility */
+a:focus-visible {
+  outline: 2px solid var(--link-normal);
+  outline-offset: 2px;
 }
 
-a:hover {
-    color: rgb(0, 36, 155);
-}
-
-.post h1 a:link,
-.post h1 a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-.post a:link,
-.post a:visited {
-    color: firebrick;
-}
-
-.post a:hover {
-    color: #c00; /* Darker red */
-    text-decoration: underline;
-}
-
+/* Header & Footer */
 header,
 footer {
-    padding: 15px; /* Reduced padding for smaller screens */
-    color: #555;
+  padding: var(--spacing-sm);
+  color: var(--text-primary);
 }
 
 header {
-    text-align: left;
+  text-align: left;
 }
 
 header h1 {
-    font-size: 25px;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
 footer {
-    text-align: center;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: var(--spacing-lg);
 }
 
+/* Navigation */
 nav a {
-    margin: 0 8px; /* Slightly smaller margin for mobile */
-    text-decoration: none;
-    color: #007acc;
+  margin: 0 12px;
+  color: var(--link-normal);
+  font-size: 1rem;
+  position: relative;
 }
 
 nav a:hover {
-    text-decoration: underline;
+  color: var(--link-hover);
 }
 
-/* Parent wrapper that centers both container and sidebar */
+/* Optional: subtle underline animation */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--link-normal);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Page Layout */
 .page-wrapper {
-    display: flex;
-    flex-direction: row; /* Default row layout for larger screens */
-    gap: 20px; /* Reduced gap for better mobile fit */
-    max-width: 1300px;
-    margin: 0 auto; /* Centers the wrapper */
-    padding: 20px 10px; /* Reduced padding for mobile */
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-lg);
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  align-items: flex-start;
 }
 
-/* Main content area */
 .container {
-    max-width: 1100px;
-    width: 100%;
-    background-color: #fcffe0;
-    padding: 1.5rem; /* Reduced padding for mobile */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-right: 0; /* Remove fixed margin for responsive layout */
-    order: 2; /* Ensure container comes second in flex */
-    border-radius: 20px;
-    max-width: 100%;
-    overflow: hidden;
+  flex: 1;
+  max-width: 100%;
+  background-color: var(--bg-container);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  order: 2;
 }
 
-/* Sidebar with bio */
 .sidebar {
-    width: 200px;
-    flex-shrink: 0;
-    text-align: left;
-    position: sticky;
-    top: 20px; /* Adjusted for smaller screens */
-    order: 1; /* Ensure sidebar comes first in flex */
-    z-index: 10;
+  width: 220px;
+  flex-shrink: 0;
+  order: 1;
+  position: sticky;
+  top: 20px;
+  z-index: 10;
 }
 
-/* .container:only-child {
-    margin-left: auto;
-    margin-right: auto;
-} */
+@media (max-width: 786px) {
+  .page-wrapper {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm);
+  }
 
-.bio-pic {
-    width: 100%; /* Responsive image width */
-    max-width: 200px; /* Maintain max size */
-    border-radius: 5%;
-}
+  .container {
+    order: 1;
+    padding: var(--spacing-sm);
+  }
 
-.PostImages {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.PostImages img {
+  .sidebar {
     width: 100%;
-    max-width: 800px;
-    border-radius: 5px;
+    position: static;
+    text-align: center;
+  }
+}
+
+/* Bio Section */
+.bio-pic {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--link-normal);
+  transition: var(--transition);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.bio-pic:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow);
 }
 
 .bio-text {
-    font-size: 1rem; /* Relative unit for better scaling */
-    color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-top: var(--spacing-sm);
 }
 
-/* Media query for mobile and smaller screens */
-@media screen and (max-width: 786px) {
-    .page-wrapper {
-        flex-direction: column; /* Stack container and sidebar vertically */
-        gap: 15px; /* Smaller gap for mobile */
-        padding: 10px; /* Further reduced padding */
-    }
+@media (max-width: 480px) {
+  .bio-pic {
+    max-width: 120px;
+  }
 
-    .container {
-        max-width: 100%; /* Full width on mobile */
-        padding: 10px; /* Smaller padding */
-        margin-right: 0; /* Remove margin for mobile */
-        order: 1; /* Container stays first */
-    }
+  .bio-text {
+    font-size: 0.9rem;
+  }
 
-    .sidebar {
-        width: 100%; /* Full width for sidebar on mobile */
-        position: static; /* Disable sticky positioning on mobile */
-        text-align: center; /* Center-align for better mobile appearance */
-        order: 2; /* Sidebar comes after container */
-    }
-
-    .bio-pic {
-        max-width: 150px; /* Smaller image for mobile */
-        margin: 0 auto 10px; /* Center image */
-    }
-
-    .bio-text {
-        font-size: 0.9rem; /* Slightly smaller font for mobile */
-    }
-
-    header,
-    footer {
-        padding: 10px; /* Even smaller padding for mobile */
-    }
-
-    nav a {
-        margin: 0 5px; /* Tighter margins for mobile */
-        font-size: 0.9rem; /* Smaller nav links */
-    }
+  nav a {
+    margin: 0 6px;
+    font-size: 0.9rem;
+  }
 }
 
-/* Media query for very small screens (e.g., phones below 480px) */
-@media screen and (max-width: 480px) {
-    body {
-        font-size: 14px; /* Smaller base font size */
-    }
-
-    .bio-text {
-        font-size: 0.9rem; /* Further reduced font size */
-    }
-
-    .bio-pic {
-        max-width: 120px; /* Even smaller image for very small screens */
-    }
-
-    nav a {
-        font-size: 0.85rem; /* Smaller nav links */
-        margin: 0 3px; /* Tighter margins */
-    }
-}
-
+/* Post Styling */
 .post {
-    font-size: 17px;
+  font-size: 17px;
+  line-height: 1.7;
+  word-wrap: break-word;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4 {
+  color: var(--text-heading);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.post h1 {
+  font-size: 2rem;
+}
+
+.post h2 {
+  font-size: 1.6rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.post h3 {
+  font-size: 1.3rem;
+}
+
+.post p {
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.post blockquote {
+  margin: var(--spacing-md) 0;
+  padding: 0.8rem 1rem;
+  background-color: rgba(181, 137, 0, 0.1);
+  border-left: 4px solid var(--link-normal);
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+.post code {
+  font-family: "Fira Code", monospace;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.95em;
+}
+
+.post pre {
+  margin: var(--spacing-md) 0;
+  padding: 1rem;
+  background: #002b36;
+  color: #eee8d5;
+  overflow-x: auto;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+/* Images in posts */
+.PostImages {
+  text-align: center;
+  margin: var(--spacing-md) 0;
+}
+
+.PostImages img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.PostImages img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Optional: Add image caption */
+.PostImages figcaption {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
