@@ -82,7 +82,6 @@ header h1 {
   line-height: 1.5;              /* Comfortable reading line height */
   font-style: italic;            /* Optional: adds editorial/subtle tone */
   max-width: 65ch;               /* Keeps line length readable */
-  text-align: center;            /* Optional: if title is centered */
 }
 
 footer {
