@@ -3,7 +3,7 @@ layout: post
 title: Masturbation of Dictators | خودکامگی مستبدین
 ---
 
-<h1>Modern Stoicism and Self-Deception</h1>
+<h2>Modern Stoicism and Self-Deception</h2>
 
 <p>
 I’ve come to understand something: some people who are very popular in our society are far less intelligent than we imagine. 
@@ -24,7 +24,7 @@ exploring new ideas—which, if I’m honest, is not the truth.
 </p>
 <hr>
 <div style="direction: rtl">
-    <h1>خودکامگی مستبدین</h1>
+    <h2>خودکامگی مستبدین</h2>
     <p>
     من چیزی را اکنون متوجه شدم؛ برخی از انسانهایی که در جامعهٔ ما [به عنوان انسان‌های موفق] معروف‌اند، انسان‌های کوته‌فکری هستند که ما فکرش را هم نمی‌کنیم. همانگونه که جورج اورول –در کتاب دختر کشیش– می‌نویسد: آنها می‌توانند پوچی فلسفی جهان را پشت تلاش‌های بی‌معنای رنجور خود پنهان کنند. به عنوان نمونه‌ای روشن اگر از آنها هدف ثروت و مکنت‌شان را بپرسی به تو جوابی منطقی نخواهند گفت. امّا من در میان آن انسان‌های تنبل و فقیری هستم که دوست دارند با ایده «پول خوشبختی نمی‌آورد» خودارضایی کنند، فلذا این پرسش‌های فلسفی من از ثروتمندان ربطی به خرد و خردورزی ندارد، بلکه می‌پرسم تا اعترافاتشان مایه مسرت و تسکین دردهایم شود.
     </p>
