@@ -3,7 +3,8 @@ layout: post
 title: Why Should You Obey Him?
 description: it's just a joke!?
 ---
-<h2>Why Should You Love Big Brother!</h2>
+
+## Why Should You Love Big Brother!
 
 <p>
 In the context of being, God created some creatures he called men. Some might argue that this word is gendered, but God didn’t care what was between your legs. After all this post-modern gender discourse, what really matters is that God split us into two categories: slaves and free men. To make this clearer, we can look at the general narrative of religious texts: he only saved the Jews from the enslavement of the Egyptian Pharaohs. He didn’t care about the suffering of other men, because he—like a dedicated psychopath—wanted to establish masters and leave the rest to choose their fate before nature.
