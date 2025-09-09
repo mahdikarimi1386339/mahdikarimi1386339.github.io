@@ -11,7 +11,7 @@ In the context of being, God created some creatures he called men. Some might ar
 </p>
 
 <div class="PostImages">
-<img src="{{ '/assets/images/Obey.png' | relative_url }}" alt="Man-god-hood age when there is no Man and God">
+    <img src="{{ '/assets/images/Obey.png' | relative_url }}" alt="Man-god-hood age when there is no Man and God">
 </div>
 
 <p>
