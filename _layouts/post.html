@@ -16,7 +16,8 @@
                     {% endif %}
                     {% if page.date %}
                     <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
-                    {% endif %} {{ content }}
+                    {% endif %} 
+                    <div class="post-content">{{ content }}</div>
                 </main>
                 {% include footer.html %}
             </div>

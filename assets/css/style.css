@@ -28,9 +28,9 @@
 }
 
 body {
+  font-family: 'Samim', sans-serif;
   background-color: var(--bg-body);
   margin: 0;
-  font-family: "IBM Plex Serif", serif;
   font-size: clamp(14px, 4vw, 16px); /* Responsive base size */
   color: var(--text-primary);
   line-height: 1.6;
@@ -78,10 +78,9 @@ header h1 {
 .post-description {
   font-size: 1.1rem;             /* Slightly smaller than body, but not tiny */
   font-weight: 400;              /* Normal or light weight — avoid bold */
-  color: #202020;                   /* Muted gray — not too dark, not too light */
+  color: #f74444;                   /* Muted gray — not too dark, not too light */
   line-height: 1.5;              /* Comfortable reading line height */
   font-style: italic;            /* Optional: adds editorial/subtle tone */
-  max-width: 65ch;               /* Keeps line length readable */
 }
 
 footer {
