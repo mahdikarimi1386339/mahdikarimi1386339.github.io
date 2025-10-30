@@ -76,7 +76,7 @@ header h1 {
 }
 
 .post-description {
-  font-size: 1.1rem;             /* Slightly smaller than body, but not tiny */
+  font-size: 1.0rem;             /* Slightly smaller than body, but not tiny */
   font-weight: 400;              /* Normal or light weight — avoid bold */
   color: #f74444;                   /* Muted gray — not too dark, not too light */
   line-height: 1.5;              /* Comfortable reading line height */
