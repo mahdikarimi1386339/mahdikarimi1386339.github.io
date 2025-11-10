@@ -4,7 +4,7 @@
   /* Color Palette (Solarized-inspired + refined accents) */
   --bg-body: #fdf6e3;
   --bg-container: #fcffe0;
-  --text-primary: #586e75;
+  --text-primary: #424e52;
   --text-heading: #1a3b4d;
   --link-normal: #b58900; /* Gold (Solarized) - warm and elegant */
   --link-hover: #6c5000;
@@ -14,6 +14,7 @@
   --spacing-sm: 0.75rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
+  --lines: rgb(194, 194, 194);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +25,7 @@
     --text-heading: #eee8d5;
     --link-normal: #b58900;
     --link-hover: #fcaf3e;
+    --lines: rgb(199, 0, 0);
   }
 }
 
@@ -76,7 +78,7 @@ header h1 {
 }
 
 .post-description {
-  font-size: 1.0rem;             /* Slightly smaller than body, but not tiny */
+  font-size: 1.1rem;             /* Slightly smaller than body, but not tiny */
   font-weight: 400;              /* Normal or light weight — avoid bold */
   color: #f74444;                   /* Muted gray — not too dark, not too light */
   line-height: 1.5;              /* Comfortable reading line height */
@@ -293,4 +295,8 @@ nav a:hover::after {
   color: #777;
   margin-top: 0.5rem;
   font-style: italic;
+}
+
+.post-content > hr {
+  border-top: 1px solid var(--lines);
 }
