@@ -11,4 +11,4 @@ for persian posts and essays:
         direction: rtl;
         text-align: right;
     }
-</style>
+    </style>
