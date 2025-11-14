@@ -278,7 +278,7 @@ nav a:hover::after {
 
 .PostImages img {
   width: 100%;
-  max-width: 800px;
+  max-width: 400px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   transition: var(--transition);
