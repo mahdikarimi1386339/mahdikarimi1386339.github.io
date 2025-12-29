@@ -1,31 +1,34 @@
 /* style.css - Enhanced for Jekyll */
 
 :root {
-  /* Color Palette (Solarized-inspired + refined accents) */
-  --bg-body: #fdf6e3;
-  --bg-container: #fcffe0;
-  --text-primary: #424e52;
-  --text-heading: #1a3b4d;
-  --link-normal: #b58900; /* Gold (Solarized) - warm and elegant */
-  --link-hover: #6c5000;
+  /* پالت رنگی بهبودیافته برای خواندن طولانی داستان */
+  /* الهام‌گرفته از Solarized، اما تیره‌تر و با کنتراست بهتر برای راحتی چشم */
+  /* light mode: زمینه گرم‌تر و کمی تیره‌تر برای کاهش خستگی چشم */
+  --bg-body: #f5e9d3;          /* کمی تیره‌تر از #fdf6e3، شبیه کاغذ قدیمی */
+  --bg-container: #faf0da;      /* زمینه اصلی محتوا، گرم و آرامش‌بخش */
+  --text-primary: #333d42;      /* متن اصلی تیره‌تر برای کنتراست بهتر */
+  --text-heading: #1a2b35;      /* عنوان‌ها تیره‌تر و برجسته‌تر */
+  --link-normal: #b58900;       /* طلايی گرم Solarized */
+  --link-hover: #d4a017;        /* هاور روشن‌تر و جذاب‌تر */
   --border-radius: 12px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --transition: all 0.2s ease;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --transition: all 0.25s ease;
   --spacing-sm: 0.75rem;
   --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --lines: rgb(194, 194, 194);
+  --spacing-lg: 2.5rem;
+  --lines: #c8c8c8;             /* خطوط جداکننده ملایم‌تر */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-body: #073642;
-    --bg-container: #002b36;
-    --text-primary: #eee8d5;
-    --text-heading: #eee8d5;
-    --link-normal: #b58900;
-    --link-hover: #fcaf3e;
-    --lines: rgb(199, 0, 0);
+    /* dark mode: زمینه تیره‌تر اما نه کاملاً سیاه، متن روشن اما نه سفید خالص برای جلوگیری از خستگی */
+    --bg-body: #00222b;         /* تیره‌تر از #073642، عمیق‌تر و آرام‌تر */
+    --bg-container: #002b36;    /* زمینه اصلی محتوا، شبیه Solarized اما تیره‌تر */
+    --text-primary: #d8d4c8;    /* متن اصلی کمی گرم‌تر و روشن‌تر از سفید (#eee8d5 → روشن‌تر) */
+    --text-heading: #f5f0e0;    /* عنوان‌ها برجسته‌تر و گرم */
+    --link-normal: #b58900;     /* طلايی همان برای ثبات */
+    --link-hover: #ffbf3a;      /* هاور روشن‌تر و انرژی‌بخش‌تر */
+    --lines: #3a4f58;           /* خطوط جداکننده تیره‌تر و هماهنگ */
   }
 }
 
