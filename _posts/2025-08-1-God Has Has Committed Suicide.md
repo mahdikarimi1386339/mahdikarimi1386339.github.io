@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Death OF God
+image: /assets/images/Hallaj_Hanging.jpg
 ---
 
 We fucked him. We slaughtered him. Some of us tried to destroy him; others just watched him suffer.

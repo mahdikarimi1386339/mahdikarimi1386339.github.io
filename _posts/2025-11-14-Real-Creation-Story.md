@@ -2,6 +2,7 @@
 layout: post
 title: God's revenue
 description: It is just a description, or something like that!
+image: /assets/images/Gods_letter.png
 ---
 
 I don’t know where this is going, but I will continue writing my honorable story. In the heavens – I forgot to say “Once upon a time…”. Adam and Eve started to have babies, yet God was not satisfied. He made an excuse about a tree or something like that, for deporting them from the heavens to the Earth. They traveled around the globe and spread their genes everywhere they could.

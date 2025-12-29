@@ -2,6 +2,7 @@
 layout: post
 title: Why Tribalism Is a Poison in the Mind of Every Aware Person
 date: 2025-07-01
+image: https://adventure.com/wp-content/uploads/2018/07/Wodaabe-nomads-in-Chad-Photo-credit-Tariq-Zaidi-Zuma-Press-01-1180x787.jpg
 ---
 
 I’ve spent most of my short life exploring and making decisions about religion—and how it works not in theory, but through real, human relationships. In this long process, I’ve discovered something troubling inside myself: sometimes, involuntarily, I want to convince others to protect the cultural figures of my country.

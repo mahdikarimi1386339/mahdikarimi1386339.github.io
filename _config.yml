@@ -7,3 +7,5 @@ url: "https://mahdikarimi1386339.github.io"
 plugins:
   - jekyll-sitemap
 baseurl: ""
+og_image: /assets/images/todaypic.jpg
+description: "Here to write for myself and the world."

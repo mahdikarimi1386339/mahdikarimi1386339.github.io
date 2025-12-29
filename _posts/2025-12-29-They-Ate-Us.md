@@ -2,6 +2,7 @@
 layout: post
 title: بی‌سوادی ما را خورد؟
 description: کسی تماشا نمی‌کند!
+image: /assets/images/Nietzsche.png
 ---
 
 <style>

@@ -2,6 +2,7 @@
 layout: post
 title: Why Should You Obey Him?
 description: it's just a joke!?
+image: /assets/images/Obey.png
 ---
 
 ## Why Should You Love Big Brother!

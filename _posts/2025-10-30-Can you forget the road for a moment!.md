@@ -2,6 +2,7 @@
 layout: post
 title: Can you forget the road for a moment?
 description:  A reflection written after watching The Long Walk (2025 movie) — less about the film itself and more about the silence that follows it.
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stephen_King_-_2011.jpg/1280px-Stephen_King_-_2011.jpg
 ---
 
 We were there, in the desert of faithfulness. All of us were there — or perhaps we must be there. When the wind of doubt begins to blow, we retreat to our silent hills, trying not to lose consciousness. That’s what I took away from my epistemology class.

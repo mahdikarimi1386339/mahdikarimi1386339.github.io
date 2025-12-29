@@ -4,6 +4,25 @@
         name="google-site-verification"
         content="Cr_uKwa8OX6jxV3MhAAxFWWrYvjMY2BAkKkm45KV9Ho"
     />
+    <!-- start -->
+        <!-- Open Graph (for Telegram, WhatsApp, Facebook, etc.) -->
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | truncatewords: 30 }}" />
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:image" content="{{ page.image | default: site.og_image | absolute_url }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+
+    <!-- Optional: Specify locale -->
+    <meta property="og:locale" content="{{ site.lang | default: 'en_US' }}" />
+    <!-- end -->
+     <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+    <meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | truncatewords: 30 }}" />
+    <meta name="twitter:image" content="{{ page.image | default: site.og_image | absolute_url }}" />
+    <!-- End Twitter Card -->
+     
     <meta charset="UTF-8" />
     <title>{{ page.title }} | {{ site.title }}</title>
     <link

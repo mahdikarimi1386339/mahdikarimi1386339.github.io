@@ -3,6 +3,7 @@ layout: post
 title: Why Jordan B. Peterson Was A Psycho On Jubilee
 date: 2025-06-21
 description: What do you mean by that?
+image: /assets/images/jbp-on-jubilee.png
 ---
 <h2> Unmasking Jordan Peterson’s Debate Tactics: A Closer Look </h2>
 

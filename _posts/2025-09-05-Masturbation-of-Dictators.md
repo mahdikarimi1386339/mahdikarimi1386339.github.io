@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Masturbation of Dictators | خودکامگی مستبدین
+image: /assets/images/Dictators.png
 ---
 
 <h2>Modern Stoicism and Self-Deception</h2>
