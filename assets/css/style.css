@@ -41,6 +41,11 @@ body {
   font-size: clamp(14px, 4vw, 16px); /* Responsive base size */
   color: var(--text-primary);
   line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.no-transition {
+    transition: none !important;
 }
 
 /* Link Styles */
@@ -373,4 +378,19 @@ nav a:hover::after {
     .nav-wrapper {
         justify-content: center;
     }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--lines);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--link-normal);
 }
