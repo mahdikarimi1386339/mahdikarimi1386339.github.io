@@ -1,35 +1,30 @@
-/* style.css - Enhanced for Jekyll */
-
 :root {
-  /* پالت رنگی بهبودیافته برای خواندن طولانی داستان */
-  /* الهام‌گرفته از Solarized، اما تیره‌تر و با کنتراست بهتر برای راحتی چشم */
-  /* light mode: زمینه گرم‌تر و کمی تیره‌تر برای کاهش خستگی چشم */
-  --bg-body: #f5e9d3;          /* کمی تیره‌تر از #fdf6e3، شبیه کاغذ قدیمی */
-  --bg-container: #faf0da;      /* زمینه اصلی محتوا، گرم و آرامش‌بخش */
-  --text-primary: #333d42;      /* متن اصلی تیره‌تر برای کنتراست بهتر */
-  --text-heading: #1a2b35;      /* عنوان‌ها تیره‌تر و برجسته‌تر */
-  --link-normal: #b58900;       /* طلايی گرم Solarized */
-  --link-hover: #d4a017;        /* هاور روشن‌تر و جذاب‌تر */
+  /* تنظیمات پیش‌فرض (Light Mode) */
+  --bg-body: #f5e9d3;
+  --bg-container: #faf0da;
+  --text-primary: #333d42;
+  --text-heading: #1a2b35;
+  --link-normal: #b58900;
+  --link-hover: #d4a017;
   --border-radius: 12px;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   --transition: all 0.25s ease;
   --spacing-sm: 0.75rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2.5rem;
-  --lines: #c8c8c8;             /* خطوط جداکننده ملایم‌تر */
+  --lines: #c8c8c8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* dark mode: زمینه تیره‌تر اما نه کاملاً سیاه، متن روشن اما نه سفید خالص برای جلوگیری از خستگی */
-    --bg-body: #00222b;         /* تیره‌تر از #073642، عمیق‌تر و آرام‌تر */
-    --bg-container: #002b36;    /* زمینه اصلی محتوا، شبیه Solarized اما تیره‌تر */
-    --text-primary: #d8d4c8;    /* متن اصلی کمی گرم‌تر و روشن‌تر از سفید (#eee8d5 → روشن‌تر) */
-    --text-heading: #f5f0e0;    /* عنوان‌ها برجسته‌تر و گرم */
-    --link-normal: #b58900;     /* طلايی همان برای ثبات */
-    --link-hover: #ffbf3a;      /* هاور روشن‌تر و انرژی‌بخش‌تر */
-    --lines: #3a4f58;           /* خطوط جداکننده تیره‌تر و هماهنگ */
-  }
+/* این بخش به جای @media قرار می‌گیرد */
+/* وقتی کلاس dark به تگ html اضافه شود، این استایل‌ها اعمال می‌شوند */
+html.dark {
+  --bg-body: #00222b;
+  --bg-container: #002b36;
+  --text-primary: #d8d4c8;
+  --text-heading: #f5f0e0;
+  --link-normal: #b58900;
+  --link-hover: #ffbf3a;
+  --lines: #3a4f58;
 }
 
 @font-face {
@@ -85,6 +80,15 @@ header h1 {
   color: var(--text-heading);
   margin: 0;
   letter-spacing: -0.5px;
+}
+
+#website_title:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+#website_title {
+  color: var(--text-heading);
 }
 
 .post-description {
@@ -311,3 +315,62 @@ nav a:hover::after {
   border-top: 1px solid var(--lines);
 }
 
+/* Theme Toggle Button */
+/* تنظیمات چیدمان هدر */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* پخش کردن محتوا بین دو طرف */
+    align-items: center; /* تراز عمودی در وسط */
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* استایل اختصاصی دکمه */
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--lines);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 6px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.theme-btn:hover {
+    background-color: rgba(181, 137, 0, 0.1);
+    border-color: var(--link-normal);
+}
+
+.theme-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* پنهان کردن آیکون‌ها در حالت غیرفعال */
+.hidden {
+    display: none !important;
+}
+
+/* اصلاح موبایل */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-wrapper {
+        justify-content: center;
+    }
+}
