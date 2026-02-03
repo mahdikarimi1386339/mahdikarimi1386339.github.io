@@ -32,8 +32,15 @@
   }
 }
 
+@font-face {
+  font-family: 'Saadi';
+  src: url(../fonts/Mj_Saadi.woff2) format('woff2'),
+       url(../fonts/Mj_Saadi.woff) format('woff');
+  size-adjust: 125%;
+}
+
 body {
-  font-family: 'Samim', sans-serif;
+  font-family: 'Libre Baskerville','Saadi', serif;
   background-color: var(--bg-body);
   margin: 0;
   font-size: clamp(14px, 4vw, 16px); /* Responsive base size */
@@ -82,7 +89,7 @@ header h1 {
 
 .post-description {
   font-size: 1.1rem;             /* Slightly smaller than body, but not tiny */
-  font-weight: 400;              /* Normal or light weight — avoid bold */
+  font-weight: 200;              /* Normal or light weight — avoid bold */
   color: #f74444;                   /* Muted gray — not too dark, not too light */
   line-height: 1.5;              /* Comfortable reading line height */
   font-style: italic;            /* Optional: adds editorial/subtle tone */
@@ -303,3 +310,4 @@ nav a:hover::after {
 .post-content > hr {
   border-top: 1px solid var(--lines);
 }
+
