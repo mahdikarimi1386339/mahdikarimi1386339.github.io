@@ -4,7 +4,6 @@ title: God's revenue
 description: It is just a description, or something like that!
 image: /assets/images/Gods_letter.png
 ---
-
 I don’t know where this is going, but I will continue writing my honorable story. In the heavens – I forgot to say “Once upon a time…”. Adam and Eve started to have babies, yet God was not satisfied. He made an excuse about a tree or something like that, for deporting them from the heavens to the Earth. They traveled around the globe and spread their genes everywhere they could.
 
 Meanwhile in the divine realm, God was hanging around the heavens and talking to his folks. Suddenly, Gabriel showed up and said, “Do you know what is happening, my Lord?” God replied, “Not exactly!” He said, “Sire! Humans are launching a rocket towards us!” God was shocked and called his gorgeous angels, who precisely wore nothing, and grabbed one of them while thinking, “I thought they would not survive, but they did. What shall I do now?”
@@ -13,6 +12,4 @@ He was walking around his throne with his metaphorical legs, which are unknown f
 
 He signed the letter and gave it to Gabriel to deliver it. Unfortunately, he or she or they or whatever (I am afraid of misgendering again) got shot by Soviet Union soldiers in 1944, around Moscow.
 
-<div class="PostImages">
-    <img src="{{ '/assets/images/Gods_letter.png' | relative_url }}" alter="God is writing a letter now">
-</div>
+![God is writing a letter now]({{ '/assets/images/Gods_letter.png' | relative_url }})

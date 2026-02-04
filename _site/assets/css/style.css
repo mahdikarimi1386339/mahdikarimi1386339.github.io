@@ -394,3 +394,28 @@ nav a:hover::after {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--link-normal);
 }
+
+/* blocking furthur things */
+/* کلاس‌های پایه برای اجبار جهت */
+.force-rtl { direction: rtl !important; text-align: right !important; }
+.force-ltr { direction: ltr !important; text-align: left !important; }
+
+/* تنظیمات مخصوص هدر پست */
+.post-header.force-rtl h1, 
+.post-header.force-rtl .post-description, 
+.post-header.force-rtl .post-date {
+    text-align: right !important;
+}
+
+.post-header.force-ltr h1, 
+.post-header.force-ltr .post-description, 
+.post-header.force-ltr .post-date {
+    text-align: left !important;
+}
+
+/* برای اینکه لینک داخل عنوان کل فضا را بگیرد و تراز شود */
+.post-header h1 a {
+    display: block !important;
+    width: 100%;
+    text-decoration: none;
+}

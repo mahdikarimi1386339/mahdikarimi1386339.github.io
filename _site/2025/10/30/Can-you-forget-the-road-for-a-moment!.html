@@ -85,18 +85,13 @@
     <hr />
 </header>
                 <main class="post">
-                    <h1>
-                        <a href="/2025/10/30/Can-you-forget-the-road-for-a-moment!.html">
-                            Can you forget the road for a moment?
-                        </a>
-                    </h1>
-                    
-                    <p class="post-description">A reflection written after watching The Long Walk (2025 movie) — less about the film itself and more about the silence that follows it.</p>
-                    
-                    
-                    <p class="post-date">October 30, 2025</p>
-                     
-                    <div class="post-content"><p>We were there, in the desert of faithfulness. All of us were there — or perhaps we must be there. When the wind of doubt begins to blow, we retreat to our silent hills, trying not to lose consciousness. That’s what I took away from my epistemology class.</p>
+                    <header class="post-header" id="dynamic-header">
+                        <h1><a href="/2025/10/30/Can-you-forget-the-road-for-a-moment!.html">Can you forget the road for a moment?</a></h1>
+                        <p class="post-description">A reflection written after watching The Long Walk (2025 movie) — less about the film itself and more about the silence that follows it.</p>
+                        <p class="post-date">October 30, 2025</p>
+                    </header>
+                    <div class="post-content" id="dynamic-content">
+                        <p>We were there, in the desert of faithfulness. All of us were there — or perhaps we must be there. When the wind of doubt begins to blow, we retreat to our silent hills, trying not to lose consciousness. That’s what I took away from my epistemology class.</p>
 
 <p>This movie made me wonder what has happened to Stephen King’s mindset from <strong>The Shawshank Redemption (1994)</strong> until now. How could such a massive thinker forget the truth in order to stay away from reality? Or perhaps he hasn’t forgotten — maybe he hides his homesickness for <strong>Stanley Kubrick</strong> behind his newer works.</p>
 
@@ -123,11 +118,9 @@
 
 <p>Don’t call me an anarchist!</p>
 
-<div class="PostImages">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stephen_King_-_2011.jpg/1280px-Stephen_King_-_2011.jpg" alt="Stephen King" />
-    <figcaption> This is Steve, son of a bitch! </figcaption>
-</div>
-</div>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stephen_King_-_2011.jpg/1280px-Stephen_King_-_2011.jpg" alt="This is Steve, son of a bitch!" /></p>
+
+                    </div>
                 </main>
                 <footer>
     <hr />
@@ -174,6 +167,86 @@
                         localStorage.setItem('color-theme', 'dark');
                     }
                 }
+            });
+
+            // for dynamic text direction
+            document.addEventListener("DOMContentLoaded", function() {
+                // تابع اصلی برای تشخیص جهت بر اساس اکثریت کاراکترها
+                const getDirectionClass = (text) => {
+                    // شمارش کاراکترهای فارسی/عربی
+                    const farsiCount = (text.match(/[\u0600-\u06FF]/g) || []).length;
+                    // شمارش کاراکترهای انگلیسی
+                    const englishCount = (text.match(/[a-zA-Z]/g) || []).length;
+
+                    // اگر متن هیچ کاراکتری نداشت (فقط عدد یا علامت بود) پیش‌فرض LTR باشد
+                    if (farsiCount === 0 && englishCount === 0) return 'force-ltr';
+
+                    // سنجش اکثریت
+                    return farsiCount >= englishCount ? 'force-rtl' : 'force-ltr';
+                };
+
+                const header = document.getElementById('dynamic-header');
+                const content = document.getElementById('dynamic-content');
+
+                // ۱. بررسی هدر (تایتل، توضیحات، تاریخ)
+                if (header) {
+                    // برای هدر، تایتل را ملاک اکثریت قرار می‌دهیم
+                    const titleText = header.querySelector('h1').innerText;
+                    const majorityClass = getDirectionClass(titleText);
+                    
+                    header.classList.remove('force-rtl', 'force-ltr'); // پاکسازی قبلی
+                    header.classList.add(majorityClass);
+                    
+                    // اعمال کلاس به فرزندان مستقیم هدر برای اطمینان از تراز شدن
+                    header.querySelectorAll('h1, p, span').forEach(el => {
+                        el.classList.remove('force-rtl', 'force-ltr');
+                        el.classList.add(majorityClass);
+                    });
+                }
+
+                // ۲. بررسی بدنه پست (پاراگراف به پاراگراف)
+                if (content) {
+                    const elements = content.querySelectorAll('p, h2, h3, h4, li, blockquote');
+                    elements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.trim().length > 0) {
+                            const majorityClass = getDirectionClass(text);
+                            el.classList.remove('force-rtl', 'force-ltr');
+                            el.classList.add(majorityClass);
+                        }
+                    });
+                }
+            });
+
+            // For images
+            document.addEventListener("DOMContentLoaded", function() {
+                // پیدا کردن تمام تصاویر داخل محتوای اصلی پست
+                const postImages = document.querySelectorAll('.post-content img');
+
+                postImages.forEach(img => {
+                    // ۱. ایجاد المان div با کلاس PostImages
+                    const container = document.createElement('div');
+                    container.className = 'PostImages';
+
+                    // ۲. ایجاد المان figcaption و قرار دادن متن alt در آن
+                    const caption = document.createElement('figcaption');
+                    caption.innerText = img.getAttribute('alt') || ""; // اگر alt نداشت خالی بماند
+
+                    // ۳. جابجایی تصویر به داخل ساختار جدید
+                    // ابتدا ظرف جدید را قبل از تصویر اصلی قرار می‌دهیم
+                    img.parentNode.insertBefore(container, img);
+                    
+                    // تصویر و کپشن را به داخل ظرف منتقل می‌کنیم
+                    container.appendChild(img);
+                    container.appendChild(caption);
+
+                    // ۴. تمیزکاری (اگر تصویر داخل یک پاراگراف تنها بود، آن پاراگراف خالی را حذف می‌کنیم)
+                    const parentP = container.parentNode;
+                    if (parentP && parentP.tagName === 'P' && parentP.innerText.trim() === "") {
+                        parentP.parentNode.insertBefore(container, parentP);
+                        parentP.remove();
+                    }
+                });
             });
         </script>
     </body>

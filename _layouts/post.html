@@ -6,18 +6,14 @@
             <div class="container">
                 {% include header.html %}
                 <main class="post">
-                    <h1>
-                        <a href="{{ page.url | relative_url }}">
-                            {{ page.title }}
-                        </a>
-                    </h1>
-                    {% if page.description %}
-                    <p class="post-description">{{ page.description }}</p>
-                    {% endif %}
-                    {% if page.date %}
-                    <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
-                    {% endif %} 
-                    <div class="post-content">{{ content }}</div>
+                    <header class="post-header" id="dynamic-header">
+                        <h1><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+                        {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}
+                        {% if page.date %}<p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>{% endif %}
+                    </header>
+                    <div class="post-content" id="dynamic-content">
+                        {{ content }}
+                    </div>
                 </main>
                 {% include footer.html %}
             </div>
@@ -60,6 +56,86 @@
                         localStorage.setItem('color-theme', 'dark');
                     }
                 }
+            });
+
+            // for dynamic text direction
+            document.addEventListener("DOMContentLoaded", function() {
+                // تابع اصلی برای تشخیص جهت بر اساس اکثریت کاراکترها
+                const getDirectionClass = (text) => {
+                    // شمارش کاراکترهای فارسی/عربی
+                    const farsiCount = (text.match(/[\u0600-\u06FF]/g) || []).length;
+                    // شمارش کاراکترهای انگلیسی
+                    const englishCount = (text.match(/[a-zA-Z]/g) || []).length;
+
+                    // اگر متن هیچ کاراکتری نداشت (فقط عدد یا علامت بود) پیش‌فرض LTR باشد
+                    if (farsiCount === 0 && englishCount === 0) return 'force-ltr';
+
+                    // سنجش اکثریت
+                    return farsiCount >= englishCount ? 'force-rtl' : 'force-ltr';
+                };
+
+                const header = document.getElementById('dynamic-header');
+                const content = document.getElementById('dynamic-content');
+
+                // ۱. بررسی هدر (تایتل، توضیحات، تاریخ)
+                if (header) {
+                    // برای هدر، تایتل را ملاک اکثریت قرار می‌دهیم
+                    const titleText = header.querySelector('h1').innerText;
+                    const majorityClass = getDirectionClass(titleText);
+                    
+                    header.classList.remove('force-rtl', 'force-ltr'); // پاکسازی قبلی
+                    header.classList.add(majorityClass);
+                    
+                    // اعمال کلاس به فرزندان مستقیم هدر برای اطمینان از تراز شدن
+                    header.querySelectorAll('h1, p, span').forEach(el => {
+                        el.classList.remove('force-rtl', 'force-ltr');
+                        el.classList.add(majorityClass);
+                    });
+                }
+
+                // ۲. بررسی بدنه پست (پاراگراف به پاراگراف)
+                if (content) {
+                    const elements = content.querySelectorAll('p, h2, h3, h4, li, blockquote');
+                    elements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.trim().length > 0) {
+                            const majorityClass = getDirectionClass(text);
+                            el.classList.remove('force-rtl', 'force-ltr');
+                            el.classList.add(majorityClass);
+                        }
+                    });
+                }
+            });
+
+            // For images
+            document.addEventListener("DOMContentLoaded", function() {
+                // پیدا کردن تمام تصاویر داخل محتوای اصلی پست
+                const postImages = document.querySelectorAll('.post-content img');
+
+                postImages.forEach(img => {
+                    // ۱. ایجاد المان div با کلاس PostImages
+                    const container = document.createElement('div');
+                    container.className = 'PostImages';
+
+                    // ۲. ایجاد المان figcaption و قرار دادن متن alt در آن
+                    const caption = document.createElement('figcaption');
+                    caption.innerText = img.getAttribute('alt') || ""; // اگر alt نداشت خالی بماند
+
+                    // ۳. جابجایی تصویر به داخل ساختار جدید
+                    // ابتدا ظرف جدید را قبل از تصویر اصلی قرار می‌دهیم
+                    img.parentNode.insertBefore(container, img);
+                    
+                    // تصویر و کپشن را به داخل ظرف منتقل می‌کنیم
+                    container.appendChild(img);
+                    container.appendChild(caption);
+
+                    // ۴. تمیزکاری (اگر تصویر داخل یک پاراگراف تنها بود، آن پاراگراف خالی را حذف می‌کنیم)
+                    const parentP = container.parentNode;
+                    if (parentP && parentP.tagName === 'P' && parentP.innerText.trim() === "") {
+                        parentP.parentNode.insertBefore(container, parentP);
+                        parentP.remove();
+                    }
+                });
             });
         </script>
     </body>

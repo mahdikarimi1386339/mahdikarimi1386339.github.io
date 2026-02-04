@@ -85,18 +85,13 @@
     <hr />
 </header>
                 <main class="post">
-                    <h1>
-                        <a href="/2025/11/14/Real-Creation-Story.html">
-                            God's revenue
-                        </a>
-                    </h1>
-                    
-                    <p class="post-description">It is just a description, or something like that!</p>
-                    
-                    
-                    <p class="post-date">November 14, 2025</p>
-                     
-                    <div class="post-content"><p>I don’t know where this is going, but I will continue writing my honorable story. In the heavens – I forgot to say “Once upon a time…”. Adam and Eve started to have babies, yet God was not satisfied. He made an excuse about a tree or something like that, for deporting them from the heavens to the Earth. They traveled around the globe and spread their genes everywhere they could.</p>
+                    <header class="post-header" id="dynamic-header">
+                        <h1><a href="/2025/11/14/Real-Creation-Story.html">God's revenue</a></h1>
+                        <p class="post-description">It is just a description, or something like that!</p>
+                        <p class="post-date">November 14, 2025</p>
+                    </header>
+                    <div class="post-content" id="dynamic-content">
+                        <p>I don’t know where this is going, but I will continue writing my honorable story. In the heavens – I forgot to say “Once upon a time…”. Adam and Eve started to have babies, yet God was not satisfied. He made an excuse about a tree or something like that, for deporting them from the heavens to the Earth. They traveled around the globe and spread their genes everywhere they could.</p>
 
 <p>Meanwhile in the divine realm, God was hanging around the heavens and talking to his folks. Suddenly, Gabriel showed up and said, “Do you know what is happening, my Lord?” God replied, “Not exactly!” He said, “Sire! Humans are launching a rocket towards us!” God was shocked and called his gorgeous angels, who precisely wore nothing, and grabbed one of them while thinking, “I thought they would not survive, but they did. What shall I do now?”</p>
 
@@ -104,10 +99,9 @@
 
 <p>He signed the letter and gave it to Gabriel to deliver it. Unfortunately, he or she or they or whatever (I am afraid of misgendering again) got shot by Soviet Union soldiers in 1944, around Moscow.</p>
 
-<div class="PostImages">
-    <img src="/assets/images/Gods_letter.png" alter="God is writing a letter now" />
-</div>
-</div>
+<p><img src="/assets/images/Gods_letter.png" alt="God is writing a letter now" /></p>
+
+                    </div>
                 </main>
                 <footer>
     <hr />
@@ -154,6 +148,86 @@
                         localStorage.setItem('color-theme', 'dark');
                     }
                 }
+            });
+
+            // for dynamic text direction
+            document.addEventListener("DOMContentLoaded", function() {
+                // تابع اصلی برای تشخیص جهت بر اساس اکثریت کاراکترها
+                const getDirectionClass = (text) => {
+                    // شمارش کاراکترهای فارسی/عربی
+                    const farsiCount = (text.match(/[\u0600-\u06FF]/g) || []).length;
+                    // شمارش کاراکترهای انگلیسی
+                    const englishCount = (text.match(/[a-zA-Z]/g) || []).length;
+
+                    // اگر متن هیچ کاراکتری نداشت (فقط عدد یا علامت بود) پیش‌فرض LTR باشد
+                    if (farsiCount === 0 && englishCount === 0) return 'force-ltr';
+
+                    // سنجش اکثریت
+                    return farsiCount >= englishCount ? 'force-rtl' : 'force-ltr';
+                };
+
+                const header = document.getElementById('dynamic-header');
+                const content = document.getElementById('dynamic-content');
+
+                // ۱. بررسی هدر (تایتل، توضیحات، تاریخ)
+                if (header) {
+                    // برای هدر، تایتل را ملاک اکثریت قرار می‌دهیم
+                    const titleText = header.querySelector('h1').innerText;
+                    const majorityClass = getDirectionClass(titleText);
+                    
+                    header.classList.remove('force-rtl', 'force-ltr'); // پاکسازی قبلی
+                    header.classList.add(majorityClass);
+                    
+                    // اعمال کلاس به فرزندان مستقیم هدر برای اطمینان از تراز شدن
+                    header.querySelectorAll('h1, p, span').forEach(el => {
+                        el.classList.remove('force-rtl', 'force-ltr');
+                        el.classList.add(majorityClass);
+                    });
+                }
+
+                // ۲. بررسی بدنه پست (پاراگراف به پاراگراف)
+                if (content) {
+                    const elements = content.querySelectorAll('p, h2, h3, h4, li, blockquote');
+                    elements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.trim().length > 0) {
+                            const majorityClass = getDirectionClass(text);
+                            el.classList.remove('force-rtl', 'force-ltr');
+                            el.classList.add(majorityClass);
+                        }
+                    });
+                }
+            });
+
+            // For images
+            document.addEventListener("DOMContentLoaded", function() {
+                // پیدا کردن تمام تصاویر داخل محتوای اصلی پست
+                const postImages = document.querySelectorAll('.post-content img');
+
+                postImages.forEach(img => {
+                    // ۱. ایجاد المان div با کلاس PostImages
+                    const container = document.createElement('div');
+                    container.className = 'PostImages';
+
+                    // ۲. ایجاد المان figcaption و قرار دادن متن alt در آن
+                    const caption = document.createElement('figcaption');
+                    caption.innerText = img.getAttribute('alt') || ""; // اگر alt نداشت خالی بماند
+
+                    // ۳. جابجایی تصویر به داخل ساختار جدید
+                    // ابتدا ظرف جدید را قبل از تصویر اصلی قرار می‌دهیم
+                    img.parentNode.insertBefore(container, img);
+                    
+                    // تصویر و کپشن را به داخل ظرف منتقل می‌کنیم
+                    container.appendChild(img);
+                    container.appendChild(caption);
+
+                    // ۴. تمیزکاری (اگر تصویر داخل یک پاراگراف تنها بود، آن پاراگراف خالی را حذف می‌کنیم)
+                    const parentP = container.parentNode;
+                    if (parentP && parentP.tagName === 'P' && parentP.innerText.trim() === "") {
+                        parentP.parentNode.insertBefore(container, parentP);
+                        parentP.remove();
+                    }
+                });
             });
         </script>
     </body>

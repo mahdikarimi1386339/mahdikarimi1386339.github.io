@@ -85,50 +85,44 @@
     <hr />
 </header>
                 <main class="post">
-                    <h1>
-                        <a href="/2025/08/01/God-Has-Has-Committed-Suicide.html">
-                            The Death OF God
-                        </a>
-                    </h1>
-                    
-                    
-                    <p class="post-date">August 01, 2025</p>
-                     
-                    <div class="post-content"><p>We fucked him. We slaughtered him. Some of us tried to destroy him; others just watched him suffer.
- He didn’t hesitate. He knew what he was part of—a legend. Not a legend of victory, but of annihilation.
-<br />
-They didn’t understand what it meant to stand outside the herd—or to become its maker. They lived as the opposite of good.
-<br />
-This wasn’t the Colosseum. It wasn’t the Shoah. It was something else: how we outlived them, and how they still changed us—both the decaying elders and the devout.
-<br />
-And who will stop this madness?
-<br />
-We must.
- Not just for those who come after, but for ourselves.
-<br />
-When I say “we,” I mean those who have lost faith in society—but still believe in goodness, and something deeper than beauty.</p>
+                    <header class="post-header" id="dynamic-header">
+                        <h1><a href="/2025/08/01/God-Has-Has-Committed-Suicide.html">The Death OF God</a></h1>
+                        
+                        <p class="post-date">August 01, 2025</p>
+                    </header>
+                    <div class="post-content" id="dynamic-content">
+                        <p>We fucked him. We slaughtered him. Some of us tried to destroy him; others just watched him suffer.
+He didn’t hesitate. He knew what he was part of—a legend. Not a legend of victory, but of annihilation.</p>
+
+<p>They didn’t understand what it meant to stand outside the herd—or to become its maker. They lived as the opposite of good.</p>
+
+<p>This wasn’t the Colosseum. It wasn’t the Shoah. It was something else: how we outlived them, and how they still changed us—both the decaying elders and the devout.</p>
+
+<p>And who will stop this madness?</p>
+
+<p>We must.
+Not just for those who come after, but for ourselves.</p>
+
+<p>When I say “we,” I mean those who have lost faith in society—but still believe in goodness, and something deeper than beauty.</p>
+
 <hr />
 
-<div style="direction: rtl">
-    ما او را بگا دادیم، ما او را سلاخی کردیم. برخی از ما او را کشتند، دیگران فقط زجر او را تماشا کردند.
-    او تردید نکرد. او می‌دانست که عضوی از یک اسطوره است. نه اسطوره‌ای پیروز، لکن اسطوره‌ای برای نابودی.
-    <br />
-    آنها نمی‌فهمیدند بیرون گله ایستادن یا ساختن یک گله چگونه‌ست؛ آنها مقابل خوبی زیستند.
-    <br /><br /><br />
-    این یک کولوسئوم نبود،یک هولوکاست نبود، این چیزی دگر بود، چیزی بود که با آن عبور کردیم از ایشان که ما را تغییر دادند.
-    و چه کسی این دیوانگی را پایان می‌دهد؟
-    <br />
+<p>ما او را بگا دادیم، ما او را سلاخی کردیم. برخی از ما او را کشتند، دیگران فقط زجر او را تماشا کردند.
+او تردید نکرد. او می‌دانست که عضوی از یک اسطوره است. نه اسطوره‌ای پیروز، لکن اسطوره‌ای برای نابودی.</p>
 
-    ما باید این کار را کنیم!
-    نه برای آنان که بعد از ما هستند، بلکه برای خود.
-    <br />
-    وقتی می‌گویم ما، منظورم کسانی‌ست که با خروج از این دین کفرآلود به نیکی‌ای فرای زیبایی پیوسته‌اند.
-</div>
-<p><br /></p>
-<div class="PostImages">
-    <img src="/assets/images/Hallaj_Hanging.jpg" alter="Hallaj" />
-</div>
-</div>
+<p>آنها نمی‌فهمیدند بیرون گله ایستادن یا ساختن یک گله چگونه‌ست؛ آنها مقابل خوبی زیستند.</p>
+
+<p>این یک کولوسئوم نبود، یک هولوکاست نبود، این چیزی دگر بود، چیزی بود که با آن عبور کردیم از ایشان که ما را تغییر دادند.
+و چه کسی این دیوانگی را پایان می‌دهد؟</p>
+
+<p>ما باید این کار را کنیم!
+نه برای آنان که بعد از ما هستند، بلکه برای خود.</p>
+
+<p>وقتی می‌گویم ما، منظورم کسانی‌ست که با خروج از این دین کفرآلود به نیکی‌ای فرای زیبایی پیوسته‌اند.</p>
+
+<p><img src="/assets/images/Hallaj_Hanging.jpg" alt="Hallaj" /></p>
+
+                    </div>
                 </main>
                 <footer>
     <hr />
@@ -175,6 +169,86 @@ When I say “we,” I mean those who have lost faith in society—but still bel
                         localStorage.setItem('color-theme', 'dark');
                     }
                 }
+            });
+
+            // for dynamic text direction
+            document.addEventListener("DOMContentLoaded", function() {
+                // تابع اصلی برای تشخیص جهت بر اساس اکثریت کاراکترها
+                const getDirectionClass = (text) => {
+                    // شمارش کاراکترهای فارسی/عربی
+                    const farsiCount = (text.match(/[\u0600-\u06FF]/g) || []).length;
+                    // شمارش کاراکترهای انگلیسی
+                    const englishCount = (text.match(/[a-zA-Z]/g) || []).length;
+
+                    // اگر متن هیچ کاراکتری نداشت (فقط عدد یا علامت بود) پیش‌فرض LTR باشد
+                    if (farsiCount === 0 && englishCount === 0) return 'force-ltr';
+
+                    // سنجش اکثریت
+                    return farsiCount >= englishCount ? 'force-rtl' : 'force-ltr';
+                };
+
+                const header = document.getElementById('dynamic-header');
+                const content = document.getElementById('dynamic-content');
+
+                // ۱. بررسی هدر (تایتل، توضیحات، تاریخ)
+                if (header) {
+                    // برای هدر، تایتل را ملاک اکثریت قرار می‌دهیم
+                    const titleText = header.querySelector('h1').innerText;
+                    const majorityClass = getDirectionClass(titleText);
+                    
+                    header.classList.remove('force-rtl', 'force-ltr'); // پاکسازی قبلی
+                    header.classList.add(majorityClass);
+                    
+                    // اعمال کلاس به فرزندان مستقیم هدر برای اطمینان از تراز شدن
+                    header.querySelectorAll('h1, p, span').forEach(el => {
+                        el.classList.remove('force-rtl', 'force-ltr');
+                        el.classList.add(majorityClass);
+                    });
+                }
+
+                // ۲. بررسی بدنه پست (پاراگراف به پاراگراف)
+                if (content) {
+                    const elements = content.querySelectorAll('p, h2, h3, h4, li, blockquote');
+                    elements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.trim().length > 0) {
+                            const majorityClass = getDirectionClass(text);
+                            el.classList.remove('force-rtl', 'force-ltr');
+                            el.classList.add(majorityClass);
+                        }
+                    });
+                }
+            });
+
+            // For images
+            document.addEventListener("DOMContentLoaded", function() {
+                // پیدا کردن تمام تصاویر داخل محتوای اصلی پست
+                const postImages = document.querySelectorAll('.post-content img');
+
+                postImages.forEach(img => {
+                    // ۱. ایجاد المان div با کلاس PostImages
+                    const container = document.createElement('div');
+                    container.className = 'PostImages';
+
+                    // ۲. ایجاد المان figcaption و قرار دادن متن alt در آن
+                    const caption = document.createElement('figcaption');
+                    caption.innerText = img.getAttribute('alt') || ""; // اگر alt نداشت خالی بماند
+
+                    // ۳. جابجایی تصویر به داخل ساختار جدید
+                    // ابتدا ظرف جدید را قبل از تصویر اصلی قرار می‌دهیم
+                    img.parentNode.insertBefore(container, img);
+                    
+                    // تصویر و کپشن را به داخل ظرف منتقل می‌کنیم
+                    container.appendChild(img);
+                    container.appendChild(caption);
+
+                    // ۴. تمیزکاری (اگر تصویر داخل یک پاراگراف تنها بود، آن پاراگراف خالی را حذف می‌کنیم)
+                    const parentP = container.parentNode;
+                    if (parentP && parentP.tagName === 'P' && parentP.innerText.trim() === "") {
+                        parentP.parentNode.insertBefore(container, parentP);
+                        parentP.remove();
+                    }
+                });
             });
         </script>
     </body>

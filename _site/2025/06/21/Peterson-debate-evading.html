@@ -17,7 +17,7 @@
     <!-- start -->
         <!-- Open Graph (for Telegram, WhatsApp, Facebook, etc.) -->
     <meta property="og:title" content="Why Jordan B. Peterson Was A Psycho On Jubilee" />
-    <meta property="og:description" content=" Unmasking Jordan Peterson’s Debate Tactics: A Closer Look 
+    <meta property="og:description" content="Unmasking Jordan Peterson’s Debate Tactics: A Closer Look
 " />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://localhost:4000/2025/06/21/Peterson-debate-evading.html" />
@@ -30,7 +30,7 @@
      <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Why Jordan B. Peterson Was A Psycho On Jubilee" />
-    <meta name="twitter:description" content=" Unmasking Jordan Peterson’s Debate Tactics: A Closer Look 
+    <meta name="twitter:description" content="Unmasking Jordan Peterson’s Debate Tactics: A Closer Look
 " />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/jbp-on-jubilee.png" />
     <!-- End Twitter Card -->
@@ -87,33 +87,26 @@
     <hr />
 </header>
                 <main class="post">
-                    <h1>
-                        <a href="/2025/06/21/Peterson-debate-evading.html">
-                            Why Jordan B. Peterson Was A Psycho On Jubilee
-                        </a>
-                    </h1>
-                    
-                    <p class="post-description">What do you mean by that?</p>
-                    
-                    
-                    <p class="post-date">June 21, 2025</p>
-                     
-                    <div class="post-content"><h2> Unmasking Jordan Peterson’s Debate Tactics: A Closer Look </h2>
+                    <header class="post-header" id="dynamic-header">
+                        <h1><a href="/2025/06/21/Peterson-debate-evading.html">Why Jordan B. Peterson Was A Psycho On Jubilee</a></h1>
+                        <p class="post-description">What do you mean by that?</p>
+                        <p class="post-date">June 21, 2025</p>
+                    </header>
+                    <div class="post-content" id="dynamic-content">
+                        <h2 id="unmasking-jordan-petersons-debate-tactics-a-closer-look">Unmasking Jordan Peterson’s Debate Tactics: A Closer Look</h2>
 
 <p>Dr. Jordan Peterson, a renowned university professor and polarizing public figure, has built a massive following through his lectures, podcasts, and online debates. Known for his deep knowledge of psychology and references to literary giants like Dostoevsky, Peterson commands attention. However, beneath the surface of his intellectual persona lies a troubling pattern: a tendency to evade tough questions and rely on emotional theatrics rather than substantive arguments. This article dives into why Peterson’s debate style often feels dishonest and how it undermines meaningful discourse.</p>
 
-<p><a href="https://www.youtube.com/watch?v=Pwk5MPE_6zE"> watch the dabate </a></p>
+<p><a href="https://www.youtube.com/watch?v=Pwk5MPE_6zE">watch the dabate</a></p>
 
-<h2> The Illusion of Victory </h2>
+<h2 id="the-illusion-of-victory">The Illusion of Victory</h2>
 
 <p>Peterson’s debates are less about engaging with ideas and more about dominating the conversation. Whether it’s through shouting, emotional outbursts, or sidestepping direct questions, he often prioritizes winning over reasoning. For those who value intellectual rigor over performative victories, this approach can be deeply frustrating. Peterson’s fans may see his passion as conviction, but critics argue it’s a tactic to deflect from weak arguments.
 For example, when pressed on contentious issues, Peterson frequently pivots to moral grandstanding. He might invoke religious or historical ideals, urging critics to “stop judging religious events with modern morality.” Yet, when challenged to address unethical aspects of religious traditions, he often dismisses opponents as “smart-asses” or shifts the conversation entirely. This selective use of moral frameworks—celebrating “pure, mythical” relationships from history while ignoring inconvenient truths—reveals a lack of consistency.</p>
 
-<div class="PostImages">
-  <img src="/assets/images/jbp-on-jubilee.png" alt="Jordan B Peterson ins Jubilee" />
-</div>
+<p><img src="/assets/images/jbp-on-jubilee.png" alt="Jordan B Peterson ins Jubilee" /></p>
 
-<h2> The Jubilee Setup: A Stacked Deck </h2>
+<h2 id="the-jubilee-setup-a-stacked-deck">The Jubilee Setup: A Stacked Deck</h2>
 
 <p>Peterson’s appearance on platforms like Jubilee, known for its “Middle Ground” debates, highlights another issue: unfair formats that amplify his style. In these setups, a lone figure—often Peterson—is pitted against a group of opponents. While this might seem like a chance for him to shine, the structure can stifle genuine discussion. Opponents are allowed to interrupt by raising a flag, a mechanic that disrupts the flow when the “lonely” debater gains traction. This tactic often prevents Peterson—or anyone in his position—from fully developing their arguments, turning the debate into a chaotic exchange of soundbites rather than a reasoned dialogue.</p>
 
@@ -126,7 +119,8 @@ Why It Matters</p>
 What do you think? Have you noticed these patterns in Peterson’s debates? Let’s keep the conversation going.</p>
 
 <p>Thanks for reading!</p>
-</div>
+
+                    </div>
                 </main>
                 <footer>
     <hr />
@@ -173,6 +167,86 @@ What do you think? Have you noticed these patterns in Peterson’s debates? Let�
                         localStorage.setItem('color-theme', 'dark');
                     }
                 }
+            });
+
+            // for dynamic text direction
+            document.addEventListener("DOMContentLoaded", function() {
+                // تابع اصلی برای تشخیص جهت بر اساس اکثریت کاراکترها
+                const getDirectionClass = (text) => {
+                    // شمارش کاراکترهای فارسی/عربی
+                    const farsiCount = (text.match(/[\u0600-\u06FF]/g) || []).length;
+                    // شمارش کاراکترهای انگلیسی
+                    const englishCount = (text.match(/[a-zA-Z]/g) || []).length;
+
+                    // اگر متن هیچ کاراکتری نداشت (فقط عدد یا علامت بود) پیش‌فرض LTR باشد
+                    if (farsiCount === 0 && englishCount === 0) return 'force-ltr';
+
+                    // سنجش اکثریت
+                    return farsiCount >= englishCount ? 'force-rtl' : 'force-ltr';
+                };
+
+                const header = document.getElementById('dynamic-header');
+                const content = document.getElementById('dynamic-content');
+
+                // ۱. بررسی هدر (تایتل، توضیحات، تاریخ)
+                if (header) {
+                    // برای هدر، تایتل را ملاک اکثریت قرار می‌دهیم
+                    const titleText = header.querySelector('h1').innerText;
+                    const majorityClass = getDirectionClass(titleText);
+                    
+                    header.classList.remove('force-rtl', 'force-ltr'); // پاکسازی قبلی
+                    header.classList.add(majorityClass);
+                    
+                    // اعمال کلاس به فرزندان مستقیم هدر برای اطمینان از تراز شدن
+                    header.querySelectorAll('h1, p, span').forEach(el => {
+                        el.classList.remove('force-rtl', 'force-ltr');
+                        el.classList.add(majorityClass);
+                    });
+                }
+
+                // ۲. بررسی بدنه پست (پاراگراف به پاراگراف)
+                if (content) {
+                    const elements = content.querySelectorAll('p, h2, h3, h4, li, blockquote');
+                    elements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.trim().length > 0) {
+                            const majorityClass = getDirectionClass(text);
+                            el.classList.remove('force-rtl', 'force-ltr');
+                            el.classList.add(majorityClass);
+                        }
+                    });
+                }
+            });
+
+            // For images
+            document.addEventListener("DOMContentLoaded", function() {
+                // پیدا کردن تمام تصاویر داخل محتوای اصلی پست
+                const postImages = document.querySelectorAll('.post-content img');
+
+                postImages.forEach(img => {
+                    // ۱. ایجاد المان div با کلاس PostImages
+                    const container = document.createElement('div');
+                    container.className = 'PostImages';
+
+                    // ۲. ایجاد المان figcaption و قرار دادن متن alt در آن
+                    const caption = document.createElement('figcaption');
+                    caption.innerText = img.getAttribute('alt') || ""; // اگر alt نداشت خالی بماند
+
+                    // ۳. جابجایی تصویر به داخل ساختار جدید
+                    // ابتدا ظرف جدید را قبل از تصویر اصلی قرار می‌دهیم
+                    img.parentNode.insertBefore(container, img);
+                    
+                    // تصویر و کپشن را به داخل ظرف منتقل می‌کنیم
+                    container.appendChild(img);
+                    container.appendChild(caption);
+
+                    // ۴. تمیزکاری (اگر تصویر داخل یک پاراگراف تنها بود، آن پاراگراف خالی را حذف می‌کنیم)
+                    const parentP = container.parentNode;
+                    if (parentP && parentP.tagName === 'P' && parentP.innerText.trim() === "") {
+                        parentP.parentNode.insertBefore(container, parentP);
+                        parentP.remove();
+                    }
+                });
             });
         </script>
     </body>

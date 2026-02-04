@@ -17,8 +17,7 @@
     <!-- start -->
         <!-- Open Graph (for Telegram, WhatsApp, Facebook, etc.) -->
     <meta property="og:title" content="Why Should You Obey Him?" />
-    <meta property="og:description" content="Why Should You Love Big Brother!
-" />
+    <meta property="og:description" content="Why Should You Love Big Brothers! In the context of being, God created some creatures he called men. Some might argue that this word is gendered, but God didn’t care..." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://localhost:4000/2025/09/08/Why-Should-You-Obey.html" />
     <meta property="og:image" content="http://localhost:4000/assets/images/Obey.png" />
@@ -30,8 +29,7 @@
      <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Why Should You Obey Him?" />
-    <meta name="twitter:description" content="Why Should You Love Big Brother!
-" />
+    <meta name="twitter:description" content="Why Should You Love Big Brothers! In the context of being, God created some creatures he called men. Some might argue that this word is gendered, but God didn’t care..." />
     <meta name="twitter:image" content="http://localhost:4000/assets/images/Obey.png" />
     <!-- End Twitter Card -->
      
@@ -87,37 +85,24 @@
     <hr />
 </header>
                 <main class="post">
-                    <h1>
-                        <a href="/2025/09/08/Why-Should-You-Obey.html">
-                            Why Should You Obey Him?
-                        </a>
-                    </h1>
-                    
-                    <p class="post-description">it's just a joke!?</p>
-                    
-                    
-                    <p class="post-date">September 08, 2025</p>
-                     
-                    <div class="post-content"><h2 id="why-should-you-love-big-brother">Why Should You Love Big Brother!</h2>
+                    <header class="post-header" id="dynamic-header">
+                        <h1><a href="/2025/09/08/Why-Should-You-Obey.html">Why Should You Obey Him?</a></h1>
+                        <p class="post-description">it's just a joke!?</p>
+                        <p class="post-date">September 08, 2025</p>
+                    </header>
+                    <div class="post-content" id="dynamic-content">
+                        <h2 id="why-should-you-love-big-brothers">Why Should You Love Big Brothers!</h2>
+<p>In the context of being, God created some creatures he called men. Some might argue that this word is gendered, but God didn’t care what was between your legs. After all this post-modern gender discourse, what really matters is that God split us into two categories: slaves and free men. To make this clearer, we can look at the general narrative of religious texts: he only saved the Jews from the enslavement of the Egyptian Pharaohs. He didn’t care about the suffering of other men, because he—like a dedicated psychopath—wanted to establish masters and leave the rest to choose their fate before nature.</p>
 
-<p>
-In the context of being, God created some creatures he called men. Some might argue that this word is gendered, but God didn’t care what was between your legs. After all this post-modern gender discourse, what really matters is that God split us into two categories: slaves and free men. To make this clearer, we can look at the general narrative of religious texts: he only saved the Jews from the enslavement of the Egyptian Pharaohs. He didn’t care about the suffering of other men, because he—like a dedicated psychopath—wanted to establish masters and leave the rest to choose their fate before nature.
-</p>
+<p><img src="/assets/images/Obey.png" alt="Man-god-hood age when there is no Man and God" /></p>
 
-<div class="PostImages">
-    <img src="/assets/images/Obey.png" alt="Man-god-hood age when there is no Man and God" />
-</div>
+<p>Unfortunately, there are some who try to convince us that the world should not be this way. The only proper and coherent answer I can give them is: go fuck your privileged moral god-damn wokeness. They are not trying to give us a better life; they are only arguing against the problem of being the powerful majority. They have no issue with privilege itself. They were bullied by stronger, better-supported people, and now they want to cloak themselves in the virtue of “caring for minorities.”</p>
 
-<p>
-Unfortunately, there are some who try to convince us that the world should not be this way. The only proper and coherent answer I can give them is: go fuck your privileged moral god-damn wokeness. They are not trying to give us a better life; they are only arguing against the problem of being the powerful majority. They have no issue with privilege itself. They were bullied by stronger, better-supported people, and now they want to cloak themselves in the virtue of “caring for minorities.”
-</p>
-<p>
-So what can this majority—or rather, the powerful minority that only seems like a majority because it’s propped up by desperate minors—do, besides ordering us around and torturing us? They are not normal people; they are masters, the owners of what they claim is the one true reality.
-</p>
-<p>
-In my moral system, you should act on what you first feel when confronted with something—if you want to be moral. Yet we must admit that we often feel the pull to obey when we face masters. With all these forces pressing down on us, the only possible and moral way to live is to love Big Brother—in the most post-modern way.
-</p>
-</div>
+<p>So what can this majority—or rather, the powerful minority that only seems like a majority because it’s propped up by desperate minors—do, besides ordering us around and torturing us? They are not normal people; they are masters, the owners of what they claim is the one true reality.</p>
+
+<p>In my moral system, you should act on what you first feel when confronted with something—if you want to be moral. Yet we must admit that we often feel the pull to obey when we face masters. With all these forces pressing down on us, the only possible and moral way to live is to love Big Brother—in the most post-modern way.</p>
+
+                    </div>
                 </main>
                 <footer>
     <hr />
@@ -164,6 +149,86 @@ In my moral system, you should act on what you first feel when confronted with s
                         localStorage.setItem('color-theme', 'dark');
                     }
                 }
+            });
+
+            // for dynamic text direction
+            document.addEventListener("DOMContentLoaded", function() {
+                // تابع اصلی برای تشخیص جهت بر اساس اکثریت کاراکترها
+                const getDirectionClass = (text) => {
+                    // شمارش کاراکترهای فارسی/عربی
+                    const farsiCount = (text.match(/[\u0600-\u06FF]/g) || []).length;
+                    // شمارش کاراکترهای انگلیسی
+                    const englishCount = (text.match(/[a-zA-Z]/g) || []).length;
+
+                    // اگر متن هیچ کاراکتری نداشت (فقط عدد یا علامت بود) پیش‌فرض LTR باشد
+                    if (farsiCount === 0 && englishCount === 0) return 'force-ltr';
+
+                    // سنجش اکثریت
+                    return farsiCount >= englishCount ? 'force-rtl' : 'force-ltr';
+                };
+
+                const header = document.getElementById('dynamic-header');
+                const content = document.getElementById('dynamic-content');
+
+                // ۱. بررسی هدر (تایتل، توضیحات، تاریخ)
+                if (header) {
+                    // برای هدر، تایتل را ملاک اکثریت قرار می‌دهیم
+                    const titleText = header.querySelector('h1').innerText;
+                    const majorityClass = getDirectionClass(titleText);
+                    
+                    header.classList.remove('force-rtl', 'force-ltr'); // پاکسازی قبلی
+                    header.classList.add(majorityClass);
+                    
+                    // اعمال کلاس به فرزندان مستقیم هدر برای اطمینان از تراز شدن
+                    header.querySelectorAll('h1, p, span').forEach(el => {
+                        el.classList.remove('force-rtl', 'force-ltr');
+                        el.classList.add(majorityClass);
+                    });
+                }
+
+                // ۲. بررسی بدنه پست (پاراگراف به پاراگراف)
+                if (content) {
+                    const elements = content.querySelectorAll('p, h2, h3, h4, li, blockquote');
+                    elements.forEach(el => {
+                        const text = el.innerText;
+                        if (text.trim().length > 0) {
+                            const majorityClass = getDirectionClass(text);
+                            el.classList.remove('force-rtl', 'force-ltr');
+                            el.classList.add(majorityClass);
+                        }
+                    });
+                }
+            });
+
+            // For images
+            document.addEventListener("DOMContentLoaded", function() {
+                // پیدا کردن تمام تصاویر داخل محتوای اصلی پست
+                const postImages = document.querySelectorAll('.post-content img');
+
+                postImages.forEach(img => {
+                    // ۱. ایجاد المان div با کلاس PostImages
+                    const container = document.createElement('div');
+                    container.className = 'PostImages';
+
+                    // ۲. ایجاد المان figcaption و قرار دادن متن alt در آن
+                    const caption = document.createElement('figcaption');
+                    caption.innerText = img.getAttribute('alt') || ""; // اگر alt نداشت خالی بماند
+
+                    // ۳. جابجایی تصویر به داخل ساختار جدید
+                    // ابتدا ظرف جدید را قبل از تصویر اصلی قرار می‌دهیم
+                    img.parentNode.insertBefore(container, img);
+                    
+                    // تصویر و کپشن را به داخل ظرف منتقل می‌کنیم
+                    container.appendChild(img);
+                    container.appendChild(caption);
+
+                    // ۴. تمیزکاری (اگر تصویر داخل یک پاراگراف تنها بود، آن پاراگراف خالی را حذف می‌کنیم)
+                    const parentP = container.parentNode;
+                    if (parentP && parentP.tagName === 'P' && parentP.innerText.trim() === "") {
+                        parentP.parentNode.insertBefore(container, parentP);
+                        parentP.remove();
+                    }
+                });
             });
         </script>
     </body>

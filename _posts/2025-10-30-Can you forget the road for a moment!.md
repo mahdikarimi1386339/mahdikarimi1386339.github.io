@@ -4,7 +4,6 @@ title: Can you forget the road for a moment?
 description:  A reflection written after watching The Long Walk (2025 movie) — less about the film itself and more about the silence that follows it.
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stephen_King_-_2011.jpg/1280px-Stephen_King_-_2011.jpg
 ---
-
 We were there, in the desert of faithfulness. All of us were there — or perhaps we must be there. When the wind of doubt begins to blow, we retreat to our silent hills, trying not to lose consciousness. That’s what I took away from my epistemology class.
 
 This movie made me wonder what has happened to Stephen King’s mindset from **The Shawshank Redemption (1994)** until now. How could such a massive thinker forget the truth in order to stay away from reality? Or perhaps he hasn’t forgotten — maybe he hides his homesickness for **Stanley Kubrick** behind his newer works.
@@ -18,7 +17,6 @@ I don’t want to mention any characters, for two reasons:
 1. I don’t want to spoil the story.
     
 2. I’m not good at writing names in English.
-    
 
 The friendships formed along the way exist only for the moment. The man who tries to live in the moment preserves the illusion of goodness — but that goodness might just be a mask to defeat his imagined enemies. He cannot sleep or dream, so he cannot be defeated within the box of his mind.
 
@@ -28,7 +26,4 @@ We can imagine and analyze every kind of crime around us — but what about the 
 
 Don’t call me an anarchist!
 
-<div class="PostImages">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stephen_King_-_2011.jpg/1280px-Stephen_King_-_2011.jpg" alt="Stephen King">
-    <figcaption> This is Steve, son of a bitch! </figcaption>
-</div>
+![This is Steve, son of a bitch!](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Stephen_King_-_2011.jpg/1280px-Stephen_King_-_2011.jpg)
