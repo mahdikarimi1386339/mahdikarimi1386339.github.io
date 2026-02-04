@@ -27,6 +27,12 @@ html.dark {
   --lines: #3a4f58;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'Saadi';
   src: url(../fonts/Mj_Saadi.woff2) format('woff2'),
@@ -239,7 +245,7 @@ nav a:hover::after {
 .post h3,
 .post h4 {
   color: var(--text-heading);
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
   font-weight: 600;
   line-height: 1.3;
