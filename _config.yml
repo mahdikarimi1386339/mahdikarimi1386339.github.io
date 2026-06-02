@@ -3,6 +3,7 @@ markdown: kramdown
 theme: null
 kramdown:
   input: GFM
+  hard_wrap: true
 url: "https://mahdikarimi1386339.github.io"
 plugins:
   - jekyll-sitemap
